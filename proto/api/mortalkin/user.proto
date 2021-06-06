@@ -24,6 +24,7 @@ message CreateCharacterPayload {
 }
 
 message CreateCharacterResponse {
+  int64 character_id = 1;
 }
 
 service User {
