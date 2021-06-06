@@ -11,8 +11,22 @@ message LoginPayload {
 
 message LoginResponse {
   string token = 1;
+  repeated Character characters = 2;
+}
+
+message Character {
+  string name = 1;
+}
+
+message CreateCharacterPayload {
+  string token = 1;
+  string name = 2;
+}
+
+message CreateCharacterResponse {
 }
 
 service User {
   rpc Login(LoginPayload) returns (LoginResponse) {}
+  rpc CreateCharacter(CreateCharacterPayload) returns (CreateCharacterResponse) {}
 }
