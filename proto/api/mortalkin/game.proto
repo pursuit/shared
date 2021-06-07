@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/pursuit/shared/proto/api/mortalkin_proto";
+
+package pursuit.api.mortalkin;
+
+message PlayGamePayload {
+  string token = 1;
+}
+
+message GameNotif {
+
+}
+
+service Game {
+  rpc Play(stream PlayGamePayload) returns (stream GameNotif) {}
+}
