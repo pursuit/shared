@@ -4,6 +4,8 @@ option go_package = "github.com/pursuit/shared/proto/api/mortalkin_proto";
 
 package pursuit.api.mortalkin;
 
+import "mortalkin/game.proto";
+
 message LoginPayload {
   string username = 1;
   bytes password = 2;
@@ -12,10 +14,6 @@ message LoginPayload {
 message LoginResponse {
   string token = 1;
   repeated Character characters = 2;
-}
-
-message Character {
-  string name = 1;
 }
 
 message CreateCharacterPayload {
