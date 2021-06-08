@@ -21,11 +21,7 @@ message CreateCharacterPayload {
   string name = 2;
 }
 
-message CreateCharacterResponse {
-  int64 character_id = 1;
-}
-
 service User {
   rpc Login(LoginPayload) returns (LoginResponse) {}
-  rpc CreateCharacter(CreateCharacterPayload) returns (CreateCharacterResponse) {}
+  rpc CreateCharacter(CreateCharacterPayload) returns (Character) {}
 }
