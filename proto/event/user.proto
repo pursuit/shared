@@ -7,7 +7,7 @@ option go_package = "github.com/pursuit/shared/proto/event_proto";
 package pursuit.event;
 
 message UserCreated {
-  uint32 id = 1;
+  uint64 id = 1;
   string username = 2;
   google.protobuf.Timestamp created_at = 3;
 }
