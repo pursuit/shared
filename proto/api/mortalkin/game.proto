@@ -6,7 +6,7 @@ package pursuit.api.mortalkin;
 
 message PlayGamePayload {
   string token = 1;
-  int64 character_id = 2;
+  uint32 character_id = 2;
   Position position = 3;
 }
 
@@ -15,14 +15,14 @@ message GameNotif {
 }
 
 message Character {
-  int64 id = 1;
+  uint32 id = 1;
   string name = 2;
   Position position = 3;
 }
 
 message Position {
-  int32 x = 1;
-  int32 y = 2;
+  uint32 x = 1;
+  uint32 y = 2;
 }
 
 service Game {
