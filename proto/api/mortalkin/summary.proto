@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "github.com/pursuit/shared/proto/api/mortalkin_proto";
+
+package pursuit.api.mortalkin;
+
+import "google/protobuf/empty.proto";
+
+message SummaryResponse {
+  uint32 registered_user = 1;
+  uint32 online_user = 2;
+}
+
+service Summary {
+  rpc Get(google.protobuf.Empty) returns (SummaryResponse) {}
+}
