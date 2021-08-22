@@ -1,5 +1,23 @@
 version: '3.5'
 services:
+  prometheus:
+    image: prom/prometheus:v2.29.1
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yaml"
+    volumes:
+      - "./prometheus.yaml:/etc/prometheus/prometheus.yaml:ro"
+    networks:
+      - myNetwork
+  grafana:
+    image: grafana/grafana:8.1.2
+    ports:
+      - 3000:3000
+    networks:
+      - myNetwork
+    depends_on:
+      - prometheus
   postgres:
     image: postgres:13.3-alpine
     environment:
