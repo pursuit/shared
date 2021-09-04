@@ -11,3 +11,8 @@ scrape_configs:
     static_configs: 
       - targets:
         - gateway:5003 
+  - job_name: portal
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+        - portal:5002
